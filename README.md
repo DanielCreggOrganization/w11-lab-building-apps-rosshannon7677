@@ -3,11 +3,6 @@
 ## Introduction
 In this lab, you will learn how to set up your development environment and build an APK from an Ionic app step by step.
 
-## Prerequisites
-- Ubuntu/Debian-based system
-- Node.js and npm installed
-- Ionic CLI installed
-
 ## Part 1: Environment Setup
 
 ### Step 1: Install Java Development Kit
