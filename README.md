@@ -186,6 +186,7 @@ Your APK will be created at: `android/app/build/outputs/apk/debug/app-debug.apk`
 !/android/build.gradle
 !/android/gradle.properties
 ```
+5. Transfer the apk file to your Android device and install it
 
 ## Part 3: Building and Deploying a PWA
 
