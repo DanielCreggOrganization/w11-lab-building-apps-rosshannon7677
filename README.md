@@ -193,12 +193,29 @@ Your APK will be created at: `android/app/build/outputs/apk/debug/app-debug.apk`
 ### Step 1: Add PWA Elements
 First, add PWA elements to your Ionic project:
 ```bash
+cd /workspaces/w11-lab-building-apps-*/device-info-app/
 npm install @ionic/pwa-elements
 ```
 
-Add the following to your `src/main.ts`:
+Update your `src/main.ts`:
 ```typescript
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideIonicAngular(),
+    provideRouter(routes, withPreloading(PreloadAllModules)),
+  ],
+});
+
+// Initialize custom elements for Ionic PWA elements
 defineCustomElements(window);
 ```
 
