@@ -222,7 +222,8 @@ defineCustomElements(window);
 ### Step 2: Generate PWA Assets
 Generate icons and splash screens for your PWA:
 ```bash
-ionic capacitor resources
+npm install -g @angular/cli
+ng add @angular/pwa
 ```
 
 ### Step 3: Build the PWA
