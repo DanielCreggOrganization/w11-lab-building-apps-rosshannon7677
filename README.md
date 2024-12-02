@@ -253,10 +253,6 @@ Visit `http://localhost:8080` in your browser. To test PWA features:
 
 ### Step 1: Set Up Ionic AppFlow
 1. Create an Ionic account at [dashboard.ionicframework.com](https://dashboard.ionicframework.com)
-2. Install Ionic CLI with AppFlow capabilities:
-```bash
-npm install -g @ionic/cli@latest
-```
 
 ### Step 2: Connect Your App
 1. Initialize AppFlow in your project:
