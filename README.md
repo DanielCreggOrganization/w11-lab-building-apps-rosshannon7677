@@ -107,12 +107,22 @@ cd ~/android-sdk
 
 2. Download and set up Android command-line tools:
 ```bash
+# Download command line tools
 wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
-unzip commandlinetools-linux-*_latest.zip
+
+# Create final directory structure
 mkdir -p cmdline-tools/latest
+
+# Extract directly to correct location
+unzip commandlinetools-linux-9477386_latest.zip
 mv cmdline-tools/* cmdline-tools/latest/
-rmdir cmdline-tools/latest/cmdline-tools
-rm commandlinetools-linux-*_latest.zip
+rm -rf cmdline-tools/latest/cmdline-tools 2>/dev/null || true
+
+# Clean up
+rm commandlinetools-linux-9477386_latest.zip
+
+# Verify correct structure
+ls -la cmdline-tools/latest
 ```
 
 3. Configure Android SDK environment variables:
