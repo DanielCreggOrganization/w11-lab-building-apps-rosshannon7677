@@ -56,6 +56,25 @@ export class DeviceInfoService {
 ```
 Create a button on the home page template to active the `getDeviceInfo()` method above.
 
+```html
+<ion-button class="ion-margin" (click)="getDeviceInfo()">Get Device Info</ion-button>
+
+@if (deviceInfo) {
+<ion-card class="ion-margin">
+ <ion-card-header>
+   <ion-card-title>Device Information</ion-card-title>
+ </ion-card-header>
+ <ion-card-content>
+   <p><strong>Model:</strong> {{deviceInfo.model}}</p>
+   <p><strong>Platform:</strong> {{deviceInfo.platform}}</p>
+   <p><strong>Operating System:</strong> {{deviceInfo.operatingSystem}}</p>
+   <p><strong>OS Version:</strong> {{deviceInfo.osVersion}}</p>
+   <p><strong>Manufacturer:</strong> {{deviceInfo.manufacturer}}</p>
+ </ion-card-content>
+</ion-card>
+}
+```
+
 ### What's Really Happening in the Browser
 1. Device.getInfo() collects information from:
    - navigator.userAgent
