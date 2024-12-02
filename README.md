@@ -177,6 +177,16 @@ chmod +x gradlew
 
 Your APK will be created at: `android/app/build/outputs/apk/debug/app-debug.apk`
 
+4. Append the following to the end of your .gitignore file
+```bash
+# Android (ignore entire build directory but keep config files)
+/android/*
+!/android/capacitor.config.json
+!/android/app/src/
+!/android/build.gradle
+!/android/gradle.properties
+```
+
 ## Part 3: Building and Deploying a PWA
 
 ### Step 1: Add PWA Elements
