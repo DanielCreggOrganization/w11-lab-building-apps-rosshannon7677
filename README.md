@@ -3,6 +3,66 @@
 ## Introduction
 In this lab, you will learn how to set up your development environment and build an APK from an Ionic app step by step.
 
+### Project Creation and Setup
+
+1. Create new Ionic project:
+   ```bash
+   # Create new Ionic Angular project
+   ionic start device-info-app blank --type=angular
+
+   # Select Standalone
+   
+   # Navigate to project directory
+   cd device-info-app
+   ```
+
+3. Install Capacitor Plugins:
+   ```bash
+   npm install @ionic/pwa-elements @capacitor/device
+   ```
+
+   Each plugin provides a consistent interface to different platform capabilities:
+   - @capacitor/device: Used to retrieve device information
+  
+Create a new device-info service :
+```bash
+ionic g s services/device-info
+```
+
+### Device Service Implementation
+
+```typescript
+// src/app/services/device-info.service.ts
+import { Injectable } from '@angular/core';
+import { Device } from '@capacitor/device';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DeviceInfoService {
+  constructor() { }
+
+  async getDeviceInfo() {
+    try {
+      // In browser, uses various navigator properties
+      const info = await Device.getInfo();
+      return info;
+    } catch (error) {
+      console.error('Error getting device info:', error);
+      throw error;
+    }
+  }
+}
+```
+Create a button on the home page template to active the `getDeviceInfo()` method above.
+
+### What's Really Happening in the Browser
+1. Device.getInfo() collects information from:
+   - navigator.userAgent
+   - navigator.platform
+   - window.innerWidth/Height
+   - Other browser APIs
+
 ## Part 1: Environment Setup
 
 ### Step 1: Install Java Development Kit
