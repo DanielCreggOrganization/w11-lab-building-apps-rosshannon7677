@@ -145,6 +145,7 @@ sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0"
 ### Step 1: Create and Build Ionic Project
 1. Build your Ionic project:
 ```bash
+cd /workspaces/w11-lab-building-apps-*/device-info-app/
 ionic build --prod
 ```
 
